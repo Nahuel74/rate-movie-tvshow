@@ -2,12 +2,7 @@
 
 const checkbox = document.querySelectorAll(".checkbox");
 
-const protagonist = document.querySelector("#protagonist");
-const antagonist = document.querySelector("#antagonist");
-const secondary = document.querySelector("#secondary");
-const extra = document.querySelector("#extra");
-
-const list = [protagonist,antagonist,secondary,extra];
+const categoryOnly = document.querySelectorAll(".category:not(.permanent)"); //Todas las que sean "category", pero que no sean "category permanent"
 
 //functions that shows the checked option
 
@@ -16,13 +11,13 @@ function findChecked(){
 	for (let x = 0; x < checkbox.length; x++){
 
 		if (checkbox[x].checked == true) {
-			list[x].style.display = "block";
+			categoryOnly[x].style.display = "";
 		}
 		else {
-			list[x].style.display = "none";
-		};
-	};
-};
+			categoryOnly[x].style.display = "none";
+		}
+	}
+}
 
 
 //SHOW/HIDE THE FORM
@@ -34,47 +29,40 @@ const questions = document.querySelector("#questions");
 //the button
 const display = document.querySelector("#display"); 
 
-let i = 0;
+//the innerHTML
+let buttonQuestion = "Display the questions";
+let buttonForm = "Display the form";
 
 //functions that display/hide the divs
 
 function changeButton(){
-	if (i == 0) {
-		display.innerHTML = "Display the questions";
-		i = 1;
-		return;
-	};
-	
-	if (i == 1) {
-		display.innerHTML = "Display the form";
-		i = 0;
-		return;
-	};
-};
+	if (display.innerHTML == buttonForm) {
+		display.innerHTML = buttonQuestion;
+	}
+	else {
+		display.innerHTML = buttonForm;
+
+	}
+}
 
 function displayForm(){
-	if (i == 0) {
+	if (form.style.display != "none") {
 		form.style.display = "none";
-		return;
-	};
-
-	if (i == 1) {
-		form.style.display = "flex";
-		return;
-	};
-};
+	}
+	else {
+		form.style.display = "";
+	}
+}
 
 function hideQuestion(){
-	if (i == 0) {
-		questions.style.display = "block";
-		return;
-	};
-
-	if (i == 1) {
+	if (questions.style.display != "none") {
 		questions.style.display = "none";
-		return;
-	};
-};
+	}
+
+	else {
+		questions.style.display = "";
+	}
+}
 
 
 

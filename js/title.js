@@ -1,5 +1,5 @@
 const title = document.querySelector("#title");
-const select = document.querySelector("#select-tipo")
+const select = document.querySelector("#select-tipo");
 
 let words = ["MOVIE", "TV SHOW", "ANIME"];
 let number;
@@ -14,7 +14,7 @@ async function changeTitle(){
 	randomNumber();
 
 	title.innerHTML= "RATE THE " + words[number];
-};
+}
 
 function delay(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -33,6 +33,6 @@ async function checkOption(){
 
 select.onchange = function(){
 			title.innerHTML = "RATE THE " + words[select.selectedIndex-1];
-}
+};
 
 checkOption();
