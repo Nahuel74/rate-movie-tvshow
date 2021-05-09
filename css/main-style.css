@@ -1,0 +1,182 @@
+:root {
+	--yellow: #ef9802 ;
+	--red: #600601; 
+	--font:"Girassol";
+
+	background-color: var(--red);
+
+	font-family: "Girassol";
+	font-size: calc(1em + 1vw);
+	color: var(--yellow);
+}
+
+body{
+	margin: 0;
+}
+
+header {
+	padding: 1.5%;
+	margin: 0;
+
+	background-color: var(--yellow);
+}
+
+header
+nav{
+	display: flex;
+	justify-content: space-around;
+}
+
+a {
+
+	padding: 1%;
+	text-decoration: none;
+	color: var(--red);
+
+	transition: 400ms;
+}
+
+a:hover{
+	
+	background-color: var(--red);
+	color: var(--yellow);
+
+}
+
+h1 {
+	font-size: 2.5rem;
+	text-align: center;
+
+	margin: 5% 0;
+}
+
+form
+header{
+	padding: 0;
+
+	margin: 5%;
+
+	display: flex;
+	justify-content: space-around;
+
+	background: transparent;
+}
+
+input {
+	border: 0;
+	border-bottom: 2px solid var(--yellow);
+	background-color: transparent;
+
+	font-family: var(--font);
+
+	color: var(--yellow);
+}
+
+header
+input{
+	border-bottom: 2px solid var(--yellow);
+
+	color: var(--yellow);
+	font-size: 1.2rem;
+
+	transition: 500ms;
+}
+
+header
+input::placeholder{
+	opacity: 1;
+}
+
+select {
+
+	background-color: var(--yellow);
+	border: none;
+
+	padding: 5%;
+
+	color: var(--red);
+	font-size: 1.3rem; 
+	font-family: var(--font)
+}
+
+#form-main{
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+}
+
+#subtitle{
+	margin: 1%;
+}
+
+#questions{
+	display: flex;
+	flex-flow: column;
+
+	margin: 2%;
+	padding: 1.5%;
+	border: 10px double var(--yellow);
+}
+
+.label-checkbox{
+	margin: 0.6% 0;
+
+	transition: 400ms;
+}
+
+.label-checkbox:hover{
+	color: white;
+}
+
+#form{
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+}
+
+.category{
+	margin: 1rem 2.2rem;
+}
+
+h2{
+	margin: 0;
+}
+
+.category
+.input{
+	display: flex;
+	flex-flow: column;
+
+	font-size: 0.8rem;
+	margin-bottom: 6%;
+	width: 50%;
+}
+
+.category
+label{
+	margin-top: 15%;
+}
+
+.rate{
+	color: white;
+	font-size: 0.8rem;
+	border-bottom: 2px solid white;
+}
+
+#footer{
+	margin: 5%;
+	display: flex;
+	justify-content: space-around;
+}
+
+
+/*Remove arrows from input type=number*/
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
