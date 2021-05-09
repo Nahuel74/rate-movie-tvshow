@@ -3,17 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<title>Calculator</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Girassol&display=swap" rel="stylesheet"> 
 	<link rel="stylesheet" type="text/css" href="css\main-style.css"> 
 </head>
 <body>
 	<header>
-		<nav id="nav-header">
+		<nav>
 			<a href="index.html">NEW</a>
 			<a href="">LIST</a>
 			<a href="">LOG IN</a>
 			<a href="">SIGN UP</a>
 		</nav>
-
 	</header>
 
 	<main>
@@ -22,40 +23,123 @@
 
 		<form>
 
-			<header id="form-header">
+			<header>
+
 						<input placeholder="Name" type="text" id="input-name">
-						<select id="select-tipo">
-							<option disabled selected class="option-tipo">Class</option>
-							<option value="movie" class="option-tipo">Movie</option>
-							<option value="tv-show" class="option-tipo">TV Show</option>
-							<option value="anime" class="option-tipo">Anime</option>
-						</select>
+						<div class="select">
+							<select id="select-tipo">
+								<option disabled selected class="option-tipo">Class</option>
+								<option value="movie" class="option-tipo">Movie</option>
+								<option value="tv-show" class="option-tipo">TV Show</option>
+								<option value="anime" class="option-tipo">Anime</option>
+							</select>
+						</div>
+
 				</header>
 
 			<main id="form-main">
-				<h2>Just a few question before begin:</h2>
+
+				<h2 id="subtitle">Just a few questions before start:</h2>
+
 				<div id="questions">
-					<h3> Has a main character? <input type="checkbox" class="checkbox"> </h3> 
-					<h3> Has an antagonist? <input type="checkbox" class="checkbox"> </h3> 
-					<h3> Has secondary characters?  <input type="checkbox" class="checkbox"> </h3> 
-					<h3> Has any any other remarkable feature? <input type="checkbox" class="checkbox"> </h3> 
+					<label class="label-checkbox"> Has a main character? <input type="checkbox" class="checkbox"> </label> 
+					<label class="label-checkbox"> Has an antagonist? <input type="checkbox" class="checkbox"> </label> 
+					<label class="label-checkbox"> Has secondary characters?  <input type="checkbox" class="checkbox"> </label> 
+					<label class="label-checkbox"> Has an own world?  <input type="checkbox" class="checkbox"> </label> 
+					<label class="label-checkbox"> Has any other remarkable qualities? <input type="checkbox" class="checkbox"> </label> 
 				</div>
 			
 				<button type="button" id="display">Display the form</button>
 				
 				<div id="form" style="display: none;">
-					<div>
-						<p id="protagonist" style="display: none;">Hola</p>
-						<p id="antagonist" style="display: none;">Adios</p>
-						<p id="secondary" style="display: none;">Hola</p>
-						<p id="extra" style="display: none;">Adios</p>
+
+					<div class="category" id="protagonist" style="display: none;">
+
+						<h2>Protagonist:</h2>
+						<input class="rate" placeholder="Value" id="protagonist-rate" type="number" disabled value="0">
+						<div class="input">
+							<label> Objective: <input type="number" min="0" max="10" class="protagonist-input" value="0"></label>
+							<label> Charisma: <input type="number" min="0" max="10" class="protagonist-input" value="0"></label>
+							<label> Evolution: <input type="number" min="0" max="10" class="protagonist-input" value="0"></label>
+							<label> Design: <input type="number" min="0" max="10" class="protagonist-input" value="0"></label>
+							<label> Relevance: <input type="number" min="0" max="10" class="protagonist-input" value="0"></label>
+							<label> Verisimilitude: <input type="number" min="0" max="10" class="protagonist-input" value="0"></label>
+						</div>
+					</div>
+
+					<div class="category" id="antagonist" style="display: none;">
+						<h2>Antagonist:</h2>
+						<input class="rate" id="antagonist-rate" placeholder="Value" type="number" disabled value="0">
+						<div class="input">
+							<label> Objective: <input type="number" min="0" max="10" class="antagonist-input" value="0"></label>
+							<label> Charisma: <input type="number" min="0" max="10" class="antagonist-input" value="0"></label>
+							<label> Evolution: <input type="number" min="0" max="10" class="antagonist-input" value="0"></label>
+							<label> Design: <input type="number" min="0" max="10" class="antagonist-input" value="0"></label>
+							<label> Relevance: <input type="number" min="0" max="10" class="antagonist-input" value="0"></label>
+							<label> Verisimilitude: <input type="number" min="0" max="10" class="antagonist-input" value="0"></label>
+						</div>
+					</div>
+
+					<div class="category" id="secondary" style="display: none;">
+						<h2>Secondary:</h2>
+						<input class="rate" id="secondary-rate" placeholder="Value" type="number" disabled value="0">
+						<div class="input">
+							<label> Objective: <input type="number" min="0" max="10" class="secondary-input" value="0"></label>
+							<label> Charisma: <input type="number" min="0" max="10" class="secondary-input" value="0"></label>
+							<label> Evolution: <input type="number" min="0" max="10" class="secondary-input" value="0"></label>
+							<label> Design: <input type="number" min="0" max="10" class="secondary-input" value="0"></label>
+							<label> Relevance: <input type="number" min="0" max="10" class="secondary-input" value="0"></label>
+							<label> Verisimilitude: <input type="number" min="0" max="10" class="secondary-input" value="0"></label>
+							<label> Filler: <input type="number" min="0" max="10" class="secondary-input" value="0"></label>
+						</div>
+					</div>
+
+					<div class="category" id="world" style="display: none;">
+						<h2>World: </h2>
+						<input class="rate" id="world-rate" placeholder="Value" type="number" disabled value="0">
+						<div class="input">
+							<label> Complexity: <input type="number" min="0" max="10" class="world-input" value="0"></label>
+							<label> Exploitation: <input type="number" min="0" max="10" class="world-input" value="0"></label>
+						</div>
+					</div>
+
+					<div class="category permanent" id="script">
+						<h2>Script: </h2>
+						<input class="rate" id="script-rate" placeholder="Value" type="number" disabled value="0">
+						<div class="input">
+							<label> Story: <input type="number" min="0" max="10" class="script-input" value="0"></label>
+							<label> Dynamism: <input type="number" min="0" max="10" class="script-input" value="0"></label>
+							<label> Entertainment: <input type="number" min="0" max="10" class="script-input" value="0"></label>
+						</div>
+					</div>
+
+					<div class="category" style="display: none;">
+						<div  id="extra">
+							<h2>Extra:</h2>
+							<input class="rate" id="extra-rate" type="number" disabled value="0">
+							<div class="input">
+								<input type="text" placeholder="Name">
+								<input type="number" min="0" max="10" class="extra-input">
+							</div>
+						</div>
+						<button id="button-plus" type="button">+</button>
+						<button id="button-minus" type="button">-</button>
 					</div>
 				</div>
 			</main>
+			<div id="footer">
+				<h2>RATE: </h2>
+				<input type="number" disabled id="final-input" value="0">
+				<button type="button" id="calculate">Calculate</button>
+				<input type="submit" value="Save">
+			</div>
 		</form>
 
 	</main>
-<script type="text/javascript" src="js/title.js"></script>
-<script type="text/javascript" src="js/display.js"></script>
+
+	<script type="text/javascript" src="js/title.js"></script>
+	<script type="text/javascript" src="js/display.js"></script>
+	<script type="text/javascript" src="js/button-extra.js"></script>
+	<script type="text/javascript" src="js/calculator.js"></script>
 </body>
 </html>
